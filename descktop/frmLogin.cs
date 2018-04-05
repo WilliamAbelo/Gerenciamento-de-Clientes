@@ -17,13 +17,12 @@ namespace descktop
         {
             InitializeComponent();
         }
-
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+            this.AcceptButton = btnEntrar;
         }
 
-        //Connection String
+        ////Connection String
         //string cs = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\MyDatabase.mdf;Integrated Security=True;";
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -35,7 +34,7 @@ namespace descktop
             }
             try
             {
-                //Create SqlConnection
+                ////Create SqlConnection
                 //SqlConnection con = new SqlConnection(cs);
                 //SqlCommand cmd = new SqlCommand("Select * from tbl_Login where UserName=@username and Password=@password", con);
                 //cmd.Parameters.AddWithValue("@username", txtUsuario.Text);
@@ -46,8 +45,8 @@ namespace descktop
                 //adapt.Fill(ds);
                 //con.Close();
                 //int count = ds.Tables[0].Rows.Count;
-                //If count is equal to 1, than show frmMain form
-                if (txtUsuario.Text == "will" || txtSenha.Text == "123")
+                ////If count is equal to 1, than show frmMain form
+                if (txtUsuario.Text == "will" && txtSenha.Text == "123")
                 {
                     //MessageBox.Show("Login Successful!");
                     this.Hide();
@@ -56,12 +55,26 @@ namespace descktop
                 }
                 else
                 {
-                    MessageBox.Show("Login Failed!");
+                    DialogResult dr = MessageBox.Show("Login Failed!", "", MessageBoxButtons.RetryCancel);
+                    switch (dr)
+                    {
+                        case DialogResult.Retry:
+                            break;
+                        case DialogResult.Cancel:
+                            this.Close();
+                            break;
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                DialogResult dr = MessageBox.Show(ex.Message, "", MessageBoxButtons.OK);
+                switch (dr)
+                {
+                    case DialogResult.OK:
+                        this.Close();
+                        break;
+                }
             }
         }
     }
