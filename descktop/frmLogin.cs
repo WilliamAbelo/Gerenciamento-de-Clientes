@@ -77,5 +77,15 @@ namespace descktop
                 }
             }
         }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEntrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

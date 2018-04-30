@@ -43,24 +43,26 @@ namespace descktop
             this.lblEntrar.AutoSize = true;
             this.lblEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblEntrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblEntrar.Location = new System.Drawing.Point(102, 9);
+            this.lblEntrar.Location = new System.Drawing.Point(347, 9);
             this.lblEntrar.Name = "lblEntrar";
             this.lblEntrar.Size = new System.Drawing.Size(65, 26);
             this.lblEntrar.TabIndex = 1;
             this.lblEntrar.Text = "Login";
             this.lblEntrar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblEntrar.Click += new System.EventHandler(this.lblEntrar_Click);
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(107, 93);
+            this.txtUsuario.Location = new System.Drawing.Point(337, 349);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // btnEntrar
             // 
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btnEntrar.Location = new System.Drawing.Point(107, 162);
+            this.btnEntrar.Location = new System.Drawing.Point(352, 425);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(75, 31);
             this.btnEntrar.TabIndex = 3;
@@ -70,7 +72,7 @@ namespace descktop
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(107, 120);
+            this.txtSenha.Location = new System.Drawing.Point(337, 376);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
@@ -79,7 +81,7 @@ namespace descktop
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(58, 100);
+            this.lblUsuario.Location = new System.Drawing.Point(288, 356);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 5;
@@ -88,7 +90,7 @@ namespace descktop
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(58, 127);
+            this.lblSenha.Location = new System.Drawing.Point(288, 383);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(38, 13);
             this.lblSenha.TabIndex = 6;
@@ -98,7 +100,8 @@ namespace descktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txtSenha);
@@ -106,6 +109,7 @@ namespace descktop
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblEntrar);
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Central de Afiação";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);

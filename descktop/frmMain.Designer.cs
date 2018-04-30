@@ -28,59 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.listRegioes = new System.Windows.Forms.ListBox();
-            this.btnUsuario = new System.Windows.Forms.Button();
+            this.tbControll = new System.Windows.Forms.TabControl();
+            this.TbClientes = new System.Windows.Forms.TabPage();
+            this.TbUsuarios = new System.Windows.Forms.TabPage();
+            this.checkRegioes = new System.Windows.Forms.CheckedListBox();
+            this.listClientes = new System.Windows.Forms.ListView();
+            this.colNome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colCidade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colTelefone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tbControll.SuspendLayout();
+            this.TbClientes.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // tbControll
             // 
-            this.button1.Location = new System.Drawing.Point(197, 226);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Sair";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.tbControll.Controls.Add(this.TbClientes);
+            this.tbControll.Controls.Add(this.TbUsuarios);
+            this.tbControll.Location = new System.Drawing.Point(12, 12);
+            this.tbControll.Name = "tbControll";
+            this.tbControll.SelectedIndex = 0;
+            this.tbControll.Size = new System.Drawing.Size(760, 537);
+            this.tbControll.TabIndex = 0;
             // 
-            // listRegioes
+            // TbClientes
             // 
-            this.listRegioes.FormattingEnabled = true;
-            this.listRegioes.Location = new System.Drawing.Point(13, 47);
-            this.listRegioes.Name = "listRegioes";
-            this.listRegioes.Size = new System.Drawing.Size(259, 147);
-            this.listRegioes.TabIndex = 1;
-            this.listRegioes.SelectedIndexChanged += new System.EventHandler(this.listRegioes_SelectedIndexChanged);
+            this.TbClientes.Controls.Add(this.listClientes);
+            this.TbClientes.Controls.Add(this.checkRegioes);
+            this.TbClientes.Location = new System.Drawing.Point(4, 22);
+            this.TbClientes.Name = "TbClientes";
+            this.TbClientes.Padding = new System.Windows.Forms.Padding(3);
+            this.TbClientes.Size = new System.Drawing.Size(752, 511);
+            this.TbClientes.TabIndex = 1;
+            this.TbClientes.Text = "Clientes";
+            this.TbClientes.UseVisualStyleBackColor = true;
+            this.TbClientes.Click += new System.EventHandler(this.TbClientes_Click);
             // 
-            // btnUsuario
+            // TbUsuarios
             // 
-            this.btnUsuario.Location = new System.Drawing.Point(13, 225);
-            this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(75, 23);
-            this.btnUsuario.TabIndex = 2;
-            this.btnUsuario.Text = "Usuarios";
-            this.btnUsuario.UseVisualStyleBackColor = true;
-            this.btnUsuario.Click += new System.EventHandler(this.button2_Click_1);
+            this.TbUsuarios.Location = new System.Drawing.Point(4, 22);
+            this.TbUsuarios.Name = "TbUsuarios";
+            this.TbUsuarios.Padding = new System.Windows.Forms.Padding(3);
+            this.TbUsuarios.Size = new System.Drawing.Size(752, 511);
+            this.TbUsuarios.TabIndex = 2;
+            this.TbUsuarios.Text = "Usuarios";
+            this.TbUsuarios.UseVisualStyleBackColor = true;
+            // 
+            // checkRegioes
+            // 
+            this.checkRegioes.CheckOnClick = true;
+            this.checkRegioes.FormattingEnabled = true;
+            this.checkRegioes.Location = new System.Drawing.Point(7, 7);
+            this.checkRegioes.Name = "checkRegioes";
+            this.checkRegioes.Size = new System.Drawing.Size(120, 94);
+            this.checkRegioes.TabIndex = 20;
+            this.checkRegioes.SelectedIndexChanged += new System.EventHandler(this.checkRegioes_SelectedIndexChanged);
+            // 
+            // listClientes
+            // 
+            this.listClientes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colNome,
+            this.colCidade,
+            this.colTelefone});
+            this.listClientes.Location = new System.Drawing.Point(7, 108);
+            this.listClientes.Name = "listClientes";
+            this.listClientes.Size = new System.Drawing.Size(739, 397);
+            this.listClientes.TabIndex = 21;
+            this.listClientes.UseCompatibleStateImageBehavior = false;
+            this.listClientes.SelectedIndexChanged += new System.EventHandler(this.listClientes_SelectedIndexChanged);
+            // 
+            // colNome
+            // 
+            this.colNome.Text = "Nome";
+            // 
+            // colCidade
+            // 
+            this.colCidade.Text = "Cidade";
+            // 
+            // colTelefone
+            // 
+            this.colTelefone.Text = "Telefone";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.btnUsuario);
-            this.Controls.Add(this.listRegioes);
-            this.Controls.Add(this.button1);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.tbControll);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.frmMain_Load);
+            this.tbControll.ResumeLayout(false);
+            this.TbClientes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listRegioes;
-        private System.Windows.Forms.Button btnUsuario;
+        private System.Windows.Forms.TabControl tbControll;
+        private System.Windows.Forms.TabPage TbClientes;
+        private System.Windows.Forms.TabPage TbUsuarios;
+        private System.Windows.Forms.ListView listClientes;
+        private System.Windows.Forms.ColumnHeader colNome;
+        private System.Windows.Forms.ColumnHeader colCidade;
+        private System.Windows.Forms.ColumnHeader colTelefone;
+        private System.Windows.Forms.CheckedListBox checkRegioes;
     }
 }
